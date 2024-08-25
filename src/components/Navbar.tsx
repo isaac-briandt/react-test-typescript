@@ -14,7 +14,7 @@ import { logout } from "../features/auth/authSlice";
 import { toast } from "react-toastify";
 import { RootState } from "../app/store";
 
-function Header() {
+export default function Navbar() {
   const { data: user } = useSelector((state: RootState) => state.auth);
 
   const [showDropdown, setShowDropDown] = useState(false);
@@ -152,5 +152,3 @@ function Header() {
     </nav>
   );
 }
-
-export default Header;
