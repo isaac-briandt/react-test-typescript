@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks";
-import { login } from "../features/auth/authSlice";
+import { account, login } from "../features/auth/authSlice";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import LoadingSpinner from "../components/LoadingSpinner";

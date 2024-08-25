@@ -118,19 +118,19 @@ export default function Todo() {
   return (
     <>
       <div className="flex flex-col w-full h-screen justify-center items-center mb-24">
-        <h1 className="text-blue-500 mb-8">
-          Manage your Todo Lists, {user?.name}
+        <h1 className="text-blue-500 mb-8 text-3xl text-center">
+          Manage your Todo Lists, <span className="text-5xl">{user?.name}</span>
         </h1>
-        <div className="w-[570px] mb-4 flex justify-center">
+        <div className="sm:w-[570px] w-full mb-4 flex justify-center">
           <input
-            className="w-full border p-2 text-lg mt-4"
+            className="sm:w-full w-[400px] border p-2 text-lg mt-4"
             value={searchValue}
             type="text"
             placeholder="search your todo..."
             onChange={(e) => setSearchValue(e.target.value)}
           />
         </div>
-        <div className="border w-[570px] px-10 py-3">
+        <div className="sm:border sm:w-[570px] w-full px-10 py-3">
           <form className="flex gap-1" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -144,7 +144,7 @@ export default function Todo() {
             <button
               disabled={formData.text.length === 0}
               type="submit"
-              className="bg-black text-lg px-2 py-1 text-white disabled:bg-black/50"
+              className="bg-black text-lg px-2 py-1 rounded-md text-white disabled:bg-black/50"
             >
               {isEditing ? "Update" : "Add"}
             </button>
