@@ -70,7 +70,6 @@ export default function () {
           // Simulate a successful login
           return {
             token: "dummy-jwt-token",
-            user,
           };
         } else {
           // Simulate failed login

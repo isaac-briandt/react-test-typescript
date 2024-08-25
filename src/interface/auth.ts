@@ -13,4 +13,5 @@ export interface UserData {
   data: UserRes | null;
   status: string;
   error: ApiErrorResponse | unknown;
+  token: string | null;
 }

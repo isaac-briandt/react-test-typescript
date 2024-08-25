@@ -54,6 +54,7 @@ export const account = createAsyncThunk("auth/account", async () => {
 
 const initialState: UserData = {
   data: null,
+  token: null,
   status: "",
   error: null,
 };
@@ -69,7 +70,7 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
-        state.data = null;
+        state.token = null;
         state.status = "loading";
       })
       .addCase(login.rejected, (state, action) => {
@@ -77,7 +78,7 @@ const authSlice = createSlice({
         state.status = "error";
       })
       .addCase(login.fulfilled, (state, action) => {
-        state.data = action.payload;
+        state.token = action.payload.token;
         state.status = "success";
       })
       .addCase(account.pending, (state) => {
